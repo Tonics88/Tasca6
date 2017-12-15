@@ -5,21 +5,35 @@
     <!-- Llibreries de bootstrap afegides directament d'internet-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="js/esprimer.js"></script>
+    <script src="js/llegirnumero.js"></script>
 </head>
 <body>
+ <!-- Aquesta pagina web ens permet cercar els primers entre 1(per defecte) i el nombre que volem -->
     <div class="container" align="center">
         <br>
+        <!-- Definim taula en format de  "Hoverable rows" de Bootstrap -->
         <table class="table table-hover" style="width:auto">
             <script>
-                num=prompt("Introdueix un nombre i et dire quants de primers hi ha entre 1 i ell");
-                document.write("<thead><tr><th>Nombres primers fins al "+num+"</th></tr></thead>");
-                for (var i=1; i<=num; i++) {
-                    if (esPrimer(i)){
-                        document.write("<tr><td>"+i+" es primer.</td></tr>");
+                var valor_partida=1;
+                var num=llegirNumero("Introdueix un nombre i et dire quants de primers hi ha entre "+valor_partida+" i ell",valor_partida);
+                if (num>=valor_partida){
+                document.write("<thead><tr><th colspan='3'>Primers fins al "+num+"</th></tr></thead>");
+                    for (var i=1, x=1; i<=num; i++) {
+                        if (esPrimer(i)){
+                            document.write("<tr><td>#"+x+".</td><td>&#8680</td><td>"+i+"</td></tr>");
+                            x++;
+                        }
                     }
+                } else {
+                    document.write("<h2>Has sortit correctament</h2><br>");
                 }
             </script>
         </table>
+
+        <!-- Boto per poder generar una taula nova sense necessitat d'haver d'actualitzar -->
+        <a href="index.html" class="btn btn-default btn-lg active" role="button">Tornar a cercar nombres primers</a>
+        
     </div>
+<!-- Pagina web creada per en Toni Caballero Salas -->
 </body>
 </html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tasca 6 - Càlcul de nombres primers</title>
+    <!-- Llibreries de bootstrap afegides directament d'internet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="js/esprimer.js"></script>
+</head>
+<body>
+    <div class="container" align="center">
+        <br>
+        <table class="table table-hover" style="width:auto">
+            <script>
+                num=prompt("Introdueix un nombre i et dire quants de primers hi ha entre 1 i ell",1);
+                document.write("<thead><tr><th colspan='3'>Primers fins al "+num+"</th></tr></thead>");
+                for (var i=1, x=1; i<=num; i++) {
+                    if (esPrimer(i)){
+                        document.write("<tr><td>#"+x+".</td><td>&#8680</td><td>"+i+"</td></tr>");
+                        x++;
+                    }
+                }
+            </script>
+        </table>
+    </div>
+</body>
+</html>
